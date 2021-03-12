@@ -1,7 +1,6 @@
 cordova.commandProxy.add("cordova-plugin-windows-libraries",{
     saveFileToDocuments:function(successCallback,errorCallback, args) {
-    	 // Search for available camera devices
-        // This is necessary to detect which camera (front or back) we should use
+        //   
         Windows.Storage.KnownFolders.documentsLibrary.
             createFileAsync(args[0],Windows.Storage.CreationCollisionOption.replaceExisting)
             .then(function (file) {
@@ -16,10 +15,10 @@ cordova.commandProxy.add("cordova-plugin-windows-libraries",{
 						        input.close(); 
 						        output.close(); 
                                 successCallback(file);
-					        }); 
-				        }); 
-                    });
-                }) 
+					        }, errorCallback(err)); 
+				        }, errorCallback(err)); 
+                    }, errorCallback(err));
+                }, errorCallback(err)) 
             .
             done(null, function (err) {
                 errorCallback(err);
