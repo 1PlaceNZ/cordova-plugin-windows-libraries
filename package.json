@@ -1,0 +1,34 @@
+{
+    "name": "cordova-plugin-windows-libraries",
+    "version": "0.0.1",
+    "description": "Cordova iCloud Document Storage Plugin",
+    "cordova": {
+      "id": "cordova-plugin-windows-libraries",
+      "platforms": [
+        "windows"
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/1PlaceNZ/cordova-plugin-windows-libraries"
+    },
+    "keywords": [
+      "cordova",
+      "windows",
+      "ecosystem:cordova",
+      "cordova-window"
+    ],
+    "engines": {
+        "cordovaDependencies": {
+            "3.0.0": {
+              "cordova": ">100"
+            }
+          }
+    },
+    "author": " ",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/1PlaceNZ/cordova-plugin-windows-libraries/issues"
+    },
+    "homepage": "https://github.com/1PlaceNZ/cordova-plugin-windows-libraries"
+  }
