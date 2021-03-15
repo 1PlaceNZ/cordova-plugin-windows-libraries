@@ -41,11 +41,13 @@ cordova.commandProxy.add("cordova-plugin-windows-libraries",{
             tryGetItemAsync(args[0])
             .then(function (file) {
                 // Open the returned file in order to delete
-			    file.deleteFileFromDocuments(Windows.Storage.StorageDeleteOption.PermanentDelete)
-                    .then(function (output) { 
-                        successCallback(file);
-                    })
-                } )
+                if (file != null) {
+			        file.deleteAsync()
+                        .then(function (output) { 
+                            successCallback(file);
+                        })
+                    }
+                })
             .
             done(null, function (err) {
                 errorCallback(err);
