@@ -31,5 +31,22 @@ cordova.commandProxy.add("cordova-plugin-windows-libraries",{
             done(null, function (err) {
                 errorCallback(err);
         });
+    };
+
+    deleteFileFromDocuments:function(successCallback,errorCallback, args) {
+        //   
+        Windows.Storage.KnownFolders.documentsLibrary.
+            createFileAsync(args[0],Windows.Storage.CreationCollisionOption.replaceExisting)
+            .then(function (file) {
+                // Open the returned file in order to delete
+			    file.deleteFileFromDocuments(Windows.Storage.StorageDeleteOption.PermanentDelete)
+                    .then(function (output) { 
+                        successCallback(file);
+                    })
+                } )
+            .
+            done(null, function (err) {
+                errorCallback(err);
+        });
     }
 });
