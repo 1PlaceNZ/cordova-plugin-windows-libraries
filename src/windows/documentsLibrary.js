@@ -15,10 +15,18 @@ cordova.commandProxy.add("cordova-plugin-windows-libraries",{
 						        input.close(); 
 						        output.close(); 
                                 successCallback(file);
-					        }, errorCallback(err)); 
-				        }, errorCallback(err)); 
-                    }, errorCallback(err));
-                }, errorCallback(err)) 
+					        }, function (err) {
+                                    errorCallback(err);
+                                }); 
+				        }, function (err) {
+                                errorCallback(err);
+                            }); 
+                    }, function (err) {
+                            errorCallback(err);
+                        });
+                }, function (err) {
+                    errorCallback(err);
+                }) 
             .
             done(null, function (err) {
                 errorCallback(err);
