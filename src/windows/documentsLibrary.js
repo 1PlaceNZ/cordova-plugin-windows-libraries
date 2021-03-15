@@ -31,7 +31,8 @@ cordova.commandProxy.add("cordova-plugin-windows-libraries",{
             done(null, function (err) {
                 errorCallback(err);
         });
-    });
+    }
+});
 
 cordova.commandProxy.add("cordova-plugin-windows-libraries",{
     deleteFileFromDocuments:function(successCallback,errorCallback, args) {
